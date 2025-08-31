@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megha Ghimire | Porfolio </title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+
+    <meta name="keywords"
+        content="portfolio website, web developer, full stack developer, front end developer, back end developer, HTML, CSS, JavaScript, React, Node.js, Python, UI UX design, responsive web design, SEO optimization, personal portfolio, modern web design, software engineer, creative developer, freelance web developer, coding projects, web application developer">
+
+    <meta name="description"
+        content="Professional full stack developer portfolio showcasing modern web design, responsive applications, UI/UX design, and coding projects. Skilled in HTML, CSS, JavaScript, React, Node.js, and Python. Explore creative web solutions and innovative digital experiences.">
+
+    <meta name="keywords"
+        content="portfolio website, web developer, full stack developer, front end developer, back end developer, HTML, CSS, JavaScript, React, Node.js, Python, UI UX design, responsive web design, SEO optimization, personal portfolio, modern web design, software engineer, creative developer, freelance web developer, coding projects, web application developer">
+
+    <style>
+        * {
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        #experience {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #3d5656;
+            /* fallback so it's not blank */
+        }
+
+        #experienceCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .exp-card {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 40px;
+            background: rgba(242, 232, 207, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            color: white;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            font-family: Arial, sans-serif;
+            transition: 0.5s
+        }
+
+        .exp-card h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #f2e8cf;
+        }
+
+        .exp-card p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e0f0e9;
+        }
+
+        .exp-card:hover {
+            transform: scale(1.05);
+            box-shadow: 3px 3px 25px #000000;
+
+        }
+
+        .bhbh {
+            background-color: #85a897;
+        }
+
+        .hihi {
+            transform: scale(1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+        }
+
+        .hihi:hover {
+            transform: scale(1.05);
+            box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-[rgba(4,13,18,0.5)] shadow-md fixed w-full z-10 px-6 py-4">
+  <nav class="flex justify-between items-center text-white font-sans">
+
+    <!-- Logo + Image on Left -->
+    <div class="flex items-center gap-2.5 cursor-pointer">
+      <div class="font-bold text-xl">MEGHA GHIMIRE</div>
+      <img src="/mg.png" alt="Logo" class="h-12">
+    </div>
+
+    <!-- Navigation Menu (Right side on desktop) -->
+    <ul class="hidden md:flex gap-6">
+      <li><a href="#hero" class="text-[#e0f0e9] hover:text-white transition-colors">Home</a></li>
+      <li><a href="#about" class="text-[#e0f0e9] hover:text-white transition-colors">About</a></li>
+      <li><a href="#skills" class="text-[#e0f0e9] hover:text-white transition-colors">Skills</a></li>
+      <li><a href="#experience" class="text-[#e0f0e9] hover:text-white transition-colors">Experience</a></li>
+      <li><a href="#contact" class="text-[#e0f0e9] hover:text-white transition-colors">Contact</a></li>
+    </ul>
+
+    <!-- Mobile Menu Button (Right side on mobile) -->
+    <button
+      class="md:hidden text-white p-2 rounded-lg focus:outline-none"
+      type="button"
+      data-drawer-target="drawer-example"
+      data-drawer-show="drawer-example"
+      aria-controls="drawer-example">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+  </nav>
+</header>
+
+
+    <div id="drawer-example"
+        class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+        tabindex="-1" aria-labelledby="drawer-label">
+        <h5 style="color: #e0f0e9; margin-bottom: 20px; ">
+            <b>MENU:</b>
+        </h5>
+        <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
+            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+            </svg>
+            <span class="sr-only">Close menu</span>
+        </button>
+
+        <div class="flex flex-col gap-[20px]">
+            <a href="#hero" class="text-[#e0f0e9] hover:text-white transition-colors">Home</a>
+            <a href="#about" class="text-[#e0f0e9] hover:text-white transition-colors">About</a>
+            <a href="#skills" class="text-[#e0f0e9] hover:text-white transition-colors">Skills</a>
+            <a href="#experience" class="text-[#e0f0e9] hover:text-white transition-colors">Experience</a>
+            <a href="#contact" class="text-[#e0f0e9] hover:text-white transition-colors">Contact</a>
+        </div>
+    </div>
+
+
+
+
+    <main>
+
+        <section id="hero"
+            style="background-color: #eff5e9; height: 120vh; width: 100vw; position: relative; overflow: hidden;">
+            <!-- Hero content -->
+            <div
+                style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+                <h1 style="color: #3d5656; font-size: 4rem; margin-bottom: 20px; text-align: center;">Welcome to the
+                    Fun Zone</h1>
+                <p style="color: rgba(55, 59, 45, 0.5); font-size: 1.5rem; margin-bottom: 30px; text-align: center;">
+                    Move your mouse
+                    and watch the magic!</p>
+
+            </div>
+
+
+            <!-- Canvas for big interactive blobs -->
+            <canvas id="heroCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+
+            <script>
+                // HERO SECTION
+                const canvas = document.getElementById('heroCanvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                const blobs = [];
+                const blobCount = 8;
+
+                for (let i = 0; i < blobCount; i++) {
+                    blobs.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        size: Math.random() * 300 + 200,
+                        speedX: (Math.random() - 0.5) * 0.2,
+                        speedY: (Math.random() - 0.5) * 0.2,
+                        color: `hsla(${Math.random() * 360}, 70%, 50%, 0.4)`
+                    });
+                }
+
+                let heroMouse = { x: canvas.width / 2, y: canvas.height / 2 };
+
+                // ✅ Fix here
+                window.addEventListener('mousemove', e => {
+                    heroMouse.x = e.clientX;
+                    heroMouse.y = e.clientY;
+                });
+
+                function animateHero() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    blobs.forEach(blob => {
+                        const dx = heroMouse.x - blob.x;
+                        const dy = heroMouse.y - blob.y;
+                        blob.x += dx * 0.01 + blob.speedX;
+                        blob.y += dy * 0.01 + blob.speedY;
+
+                        ctx.beginPath();
+                        ctx.arc(blob.x, blob.y, blob.size / 2, 0, Math.PI * 2);
+                        ctx.fillStyle = blob.color;
+                        ctx.fill();
+                    });
+
+                    requestAnimationFrame(animateHero);
+                }
+                animateHero();
+
+                window.addEventListener('resize', () => {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                });
+
+            </script>
+
+        </section>
+
+
+        <section id="about"
+            style="height: 120vh; width: 100vw; position: relative; overflow: hidden; background:#3d5656; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
+
+            <!-- 3D Canvas -->
+            <canvas id="aboutCanvas" style="position:absolute; left:0;bottom: 80px; width:100%; height:120vh;"></canvas>
+
+            <!-- About Content -->
+            <div
+                style="position: relative; z-index: 2; max-width: 700px; padding: 30px; background: rgba(235, 243, 216, 0.5); border-radius: 20px; backdrop-filter: blur(8px);">
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">About Me</h1>
+                <p style="font-size: 1.2rem; line-height: 1.6;">
+                    Hi, I'm <b>MEGHA GHIMIRE</b>, a passionate developer who loves creating immersive and
+                    interactive web experiences.
+                    I enjoy blending creativity with code to make websites that feel alive and fun. When I’m not
+                    coding, you’ll probably
+                    find me exploring music, design, or cool tech projects.
+                </p>
+            </div>
+        </section>
+
+
+        <script>
+            // Scene setup
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("aboutCanvas"), alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            // Floating particles
+            const particlesCount = 800;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particlesCount * 3);
+
+            for (let i = 0; i < particlesCount * 3; i++) {
+                positions[i] = (Math.random() - 0.5) * 20;
+            }
+
+            geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+            const material = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05 });
+            const particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            camera.position.z = 5;
+
+            // Mouse interactivity
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener("mousemove", (e) => {
+                mouseX = (e.clientX / window.innerWidth) - 0.5;
+                mouseY = (e.clientY / window.innerHeight) - 0.5;
+            });
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                particles.rotation.x += 0.001;
+                particles.rotation.y += 0.001;
+
+                particles.rotation.x += mouseY * 0.01;
+                particles.rotation.y += mouseX * 0.01;
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Resize handling
+            window.addEventListener("resize", () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        </script>
+
+
+        <section id="skills">
+            <canvas id="skillsCanvas"></canvas>
+            <div class="content">
+                <h1>My Skills</h1>
+                <p>
+                    ⚡ HTML, CSS, JavaScript <br>
+                    ⚡ React & Tailwind CSS <br>
+                    ⚡ Laravel for backend <br>
+                    ⚡ Blender & 3D Design
+                </p>
+            </div>
+        </section>
+
+
+        <style>
+            #skills {
+                position: relative;
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                overflow: hidden;
+                background: rgba(241, 245, 241, 0.5);
+                color: white;
+            }
+
+            #skillsCanvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            #skills .content {
+                position: relative;
+                z-index: 2;
+                max-width: 700px;
+                padding: 30px;
+                background: rgba(201, 68, 68, 0.08);
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+            }
+
+            #skills .content h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+
+            #skills .content p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+            }
+        </style>
+
+        <script>
+            const skillsCanvas = document.getElementById("skillsCanvas");
+            const skillsCtx = skillsCanvas.getContext("2d");
+
+            let sw, sh, smouseX = 0, smouseY = 0, scenterX, scenterY;
+            function resizeSkillsCanvas() {
+                sw = skillsCanvas.width = window.innerWidth;
+                sh = skillsCanvas.height = window.innerHeight;
+                scenterX = sw / 2;
+                scenterY = sh / 2;
+            }
+            window.addEventListener("resize", resizeSkillsCanvas);
+            resizeSkillsCanvas();
+
+            document.addEventListener("mousemove", (e) => {
+                smouseX = e.clientX;
+                smouseY = e.clientY;
+            });
+
+            let sangle = 0;
+            function animateSkillsBG() {
+                skillsCtx.clearRect(0, 0, sw, sh);
+
+                let offsetX = (smouseX - scenterX) * 0.05;
+                let offsetY = (smouseY - scenterY) * 0.05;
+
+                skillsCtx.beginPath();
+                let radius = Math.min(sw, sh) * 0.6 + Math.sin(sangle) * 50;
+                let gradient = skillsCtx.createRadialGradient(
+                    scenterX + offsetX, scenterY + offsetY, radius * 0.3,
+                    scenterX + offsetX, scenterY + offsetY, radius
+                );
+
+                gradient.addColorStop(0.2, "#3d5656");   // deep teal (same as About section bg)
+                gradient.addColorStop(0.9, "#6ba8a9");   // soft aqua
+                gradient.addColorStop(1, "#f2e8cf");     // warm beige/cream
+
+
+                skillsCtx.fillStyle = gradient;
+                skillsCtx.fillRect(0, 0, sw, sh);
+
+                sangle += 0.02;
+                requestAnimationFrame(animateSkillsBG);
+            }
+            animateSkillsBG();
+        </script>
+        </section>
+
+        <section id="experience">
+            <canvas id="experienceCanvas"></canvas>
+            <div class="exp-card ">
+                <h1>My Experience</h1>
+                <p>
+                    🌟 Built interactive front-end web with HTML CSS & JavaScript <br>
+                    🌟 Designed immersive 3D visuals with Three.js & Blender <br>
+                    🌟 Built back-end with Laravel for creative projects <br>
+                    🌟 Collaborated with teams to deliver modern digital solutions
+                </p>
+            </div>
+        </section>
+
+        <script>
+            // EXPERIENCE BUBBLES
+            const expCanvas = document.getElementById("experienceCanvas");
+            const expCtx = expCanvas.getContext("2d");
+            expCanvas.width = window.innerWidth;
+            expCanvas.height = window.innerHeight;
+
+            let bubbles = [];
+
+            class Bubble {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = Math.random() * 10 + 6;
+                    this.color = color;
+                    this.alpha = 1;
+                    this.speedX = (Math.random() - 0.5) * 6; // spread wider horizontally
+                    this.speedY = (Math.random() - 0.7) * 6; // spread vertically (up & down)
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    this.alpha -= 0.001; // fade out slower for a bigger spread
+                }
+
+                draw(ctx) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color.replace("ALPHA", this.alpha.toFixed(2));
+                    ctx.fill();
+                }
+            }
+
+            function animateBubbles() {
+                expCtx.clearRect(0, 0, expCanvas.width, expCanvas.height);
+                bubbles = bubbles.filter(b => b.alpha > 0);
+                bubbles.forEach(b => {
+                    b.update();
+                    b.draw(expCtx);
+                });
+                requestAnimationFrame(animateBubbles);
+            }
+            animateBubbles();
+
+            // COLORS (shiny neon-like)
+            const bubbleColors = [
+                "rgba(255, 99, 132, ALPHA)",
+                "rgba(54, 162, 235, ALPHA)",
+                "rgba(255, 206, 86, ALPHA)",
+                "rgba(75, 192, 192, ALPHA)",
+                "rgba(153, 102, 255, ALPHA)",
+                "rgba(255, 159, 64, ALPHA)"
+            ];
+
+            // Spawn bubbles when hover on card
+            const expCard = document.querySelector(".exp-card");
+            expCard.addEventListener("mouseenter", () => {
+                const rect = expCard.getBoundingClientRect();
+                for (let i = 0; i < 550; i++) { // more bubbles for full coverage
+                    let x = rect.left + Math.random() * rect.width;
+                    let y = rect.top + Math.random() * rect.height;
+                    let color = bubbleColors[Math.floor(Math.random() * bubbleColors.length)];
+                    bubbles.push(new Bubble(x, y, color));
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                expCanvas.width = window.innerWidth;
+                expCanvas.height = window.innerHeight;
+            });
+        </script>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact"
+            style="position: relative; height: 100vh; width: 100vw; overflow: hidden; color: rgb(5, 19, 9); display: flex; align-items: center; justify-content: center; background-color:#e0f0e9;">
+
+            <!-- CONTACT SECTION -->
+            <section id="contact"
+                style="position: relative; height: 100vh; width: 100vw; overflow: hidden; color: rgb(5, 19, 9); display: flex; align-items: center; justify-content: center; background-color:#e0f0e9;">
+
+                <!-- Contact Info -->
+                <div class="hihi"
+                    style="position: relative; z-index: 2; text-align: center; background: rgba(167, 121, 121, 0.5); padding: 20px 40px; border-radius: 20px; background-color: #85a897;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Contact Me</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;">📧 Email: ghimiremegha4@gmail.com</p>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;">📱 Phone: +977-9825383795</p>
+                    <p style="font-size: 1.2rem;">🌐 Socials:
+                        <a href="" style="color: rgb(4, 36, 17);">Instagram</a> |
+                        <a href="https://www.linkedin.com/in/megha-ghimire-0573bb318/" target="_main"
+                            style="color: rgb(10, 40, 52);">LinkedIn</a> |
+                        <a href="" style="color: rgb(2, 17, 23);">Facebook</a>
+                    </p>
+                </div>
+
+                <!-- Bubble Container -->
+                <div id="bubble-container"></div>
+            </section>
+
+            <style>
+                #bubble-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    overflow: hidden;
+                    z-index: 1;
+                }
+
+                .bubble {
+                    position: absolute;
+                    bottom: -50px;
+                    border-radius: 90%;
+                    background: rgba(1, 83, 41, 0.4);
+                    box-shadow: 0 0 10px rgba(4, 181, 1, 0.6);
+                    animation: rise 10s linear forwards;
+
+                }
+
+                @keyframes rise {
+                    from {
+                        transform: translateY(0) scale(1);
+                        opacity: 0.7;
+                    }
+
+                    to {
+                        transform: translateY(-120vh) scale(0.5);
+                        opacity: 0;
+                    }
+                }
+
+                /* Drawer button (hamburger) */
+                .drawer-btn {
+                    display: none;
+                    /* hidden on desktop */
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                }
+
+                /* Drawer menu */
+                .drawer-menu {
+                    position: fixed;
+                    top: 0;
+                    right: -250px;
+                    /* hidden by default */
+                    width: 250px;
+                    height: 100vh;
+                    background: #2e3b3b;
+                    color: white;
+                    padding: 60px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    transition: right 0.3s ease;
+                    z-index: 20;
+                }
+
+                .drawer-menu.active {
+                    right: 0;
+                    /* slide in */
+                }
+
+                .drawer-menu a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                }
+
+                /* Mobile only */
+                @media (max-width: 768px) {
+                    nav ul {
+                        display: none;
+                        /* hide regular menu */
+                    }
+
+                    .drawer-btn {
+                        display: block;
+                        /* show drawer button */
+                    }
+                }
+            </style>
+
+            <script>
+                const bubbleContainer = document.getElementById("bubble-container");
+                const card = document.querySelector(".hihi");
+
+                card.addEventListener("mouseenter", () => {
+                    for (let i = 0; i < 30; i++) {
+                        let bubble = document.createElement("div");
+                        bubble.className = "bubble";
+                        let size = Math.random() * 40 + 30;
+                        bubble.style.width = size + "px";
+                        bubble.style.height = size + "px";
+                        bubble.style.left = Math.random() * 100 + "%";
+                        bubble.style.animationDuration = (5 + Math.random() * 5) + "s";
+                        bubbleContainer.appendChild(bubble);
+
+                        setTimeout(() => bubble.remove(), 10000);
+                    }
+                });
+            </script>
+    </main>
+
+
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
